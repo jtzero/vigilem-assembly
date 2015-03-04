@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email                     = ['jtzero511@gmail.com']
   spec.summary                   = %q{Provides facitlities to Assemble together the Vigilem gems}
   spec.description               = %q{Provides facitlities to Assemble together the Vigilem gems}
-  spec.homepage                  = ''
+  spec.homepage                  = 'http://rubygems.org/gems/vigilem-support'
   spec.license                   = 'MIT'
   
   spec.add_dependency 'vigilem-core'
@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'turnip'
   spec.add_development_dependency 'guard-rspec'
   
-  spec.files         = Dir['{lib,spec,ext,test,features,bin}/**/**']
+  spec.files         = Dir['{lib,spec,ext,test,features,bin}/**/**'] + ["License.txt"]
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
