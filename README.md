@@ -20,9 +20,20 @@ or
   
   Vigilem::Assembly.install_handler! # which will error if no handler found
 ```
+##During Gem install
+```ruby
+  #ext/Rakefile
+  require 'vigilem/assembly'
+  
+  task :assemble do
+    Vigilem::Assembly.install_handler
+  end
+  
+  task default: :assemble
+```
 
 ## Creating a new Stat
-```
+```ruby
   require 'ffi'
   
   require 'vigilem/assembly'
