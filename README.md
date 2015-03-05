@@ -12,6 +12,8 @@
   
   Vigilem::Assembly.install_handler
 ```
+  This will load one of the default Stat's @see [Vigilem::Win32API::Stat](https://github.com/jtzero/vigilem-win32_api-stat), [Vigilem::Evdev::Stat](https://github.com/jtzero/vigilem-evdev-stat)
+  it checks ```Vigilem::Stat.all``` to load the Stats.
 or
 ```ruby
   require 'vigilem/assembly'
@@ -19,6 +21,35 @@ or
   Vigilem::Assembly.install_handler! # which will error if no handler found
 ```
 
+## Creating a new Stat
+```
+  require 'ffi'
+  
+  require 'vigilem/assembly'
+  
+  class CocoaStat < Vigilem::Core::Stat
+    extend FFI::Library
+    # by default self.new automatically adds the Stat to 
+    # the list of stats
+    def initialize(version=nil)
+      options = {}
+      options[:version] = version
+      options[:platforms] = /darwin/
+      super('Cocoa', 'my-cocoa-api', options) do 
+        begin
+          !!ffi_lib('/System/Library/Frameworks/Cocoa.framework/Cocoa')
+        rescue LoadError
+          false
+        end
+      end
+    end
+    
+    def self.default
+      @default ||= new
+    end
+    
+  end
+```
 
 ## Contributing
 
