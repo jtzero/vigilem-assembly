@@ -8,7 +8,7 @@ module Vigilem
     # :nodoc:
     class NoAvailableHandler < StandardError
       # @param  [String || NilClass] msg defaults to "None of `#{Core::Stat.all}' report #available?"
-      def intialize(msg=nil)
+      def initialize(msg=nil)
         super(msg || "None of `#{Core::Stat.all}' report #available?")
       end
     end

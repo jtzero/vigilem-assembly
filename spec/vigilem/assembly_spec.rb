@@ -17,6 +17,12 @@ describe Vigilem::Assembly do
     Stat.all.replace([])
   end
   
+  describe 'NoAvailableHandler' do
+    it 'defaults message == "None one of `#{Core::Stat.all}\' report #available?"' do
+      expect(described_class::NoAvailableHandler.new.message).to match(/None of `.+' report #available\?/)
+    end
+  end
+  
   describe '::find_stat' do
     it %q<find's an #available? Stat> do
       Stat.all << avail_stat

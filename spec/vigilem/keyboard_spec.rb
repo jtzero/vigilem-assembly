@@ -2,6 +2,6 @@ require 'spec_helper'
 
 require 'vigilem/keyboard'
 
-describe Keyboard do
+describe Vigilem::Keyboard do
   #@todo
 end
