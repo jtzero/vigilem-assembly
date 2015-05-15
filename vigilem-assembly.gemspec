@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email                     = ['jtzero511@gmail.com']
   spec.summary                   = %q{Provides facitlities to Assemble together the Vigilem gems}
   spec.description               = %q{Provides facitlities to Assemble together the Vigilem gems}
-  spec.homepage                  = 'http://rubygems.org/gems/vigilem-support'
+  spec.homepage                  = 'https://rubygems.org/gems/vigilem-assembly'
   spec.license                   = 'MIT'
   
   spec.add_dependency 'vigilem-core'
